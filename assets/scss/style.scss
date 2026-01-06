@@ -1,0 +1,37 @@
+//утилиты
+@use "utils/_fonts.scss" as *;
+@use "utils/_reset.scss" as *;
+@use "utils/_mixins" as mSt;
+@use "utils/_settings.scss" as setSt;
+@use "utils/_variable.scss" as var;
+
+// блоки
+@use "blocks/_header.scss";
+@use "blocks/_location.scss";
+@use "blocks/_offers.scss";
+@use "blocks/_blog.scss";
+@use "blocks/_footer.scss";
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffff;
+}
+.content {
+  flex: 1 1 auto;
+}
+
+[class*="__container"] {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  @media (max-width: 1180px) {
+    padding: 10px;
+  }
+}
+
+.open {
+  display: flex !important;
+}

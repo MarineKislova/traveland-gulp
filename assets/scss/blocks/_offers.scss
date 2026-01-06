@@ -1,0 +1,182 @@
+@use "utils/_mixins" as mSt;
+
+.offers {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include mSt.adaptiv-value("padding-top", 70, 40, 0);
+    @include mSt.adaptiv-value("padding-bottom", 70, 40, 0);
+  }
+
+  &__title {
+    align-self: center;
+    font-family: "Gelasio";
+    font-weight: 500;
+    @include mSt.adaptiv-value("font-size", 43, 27, 0);
+    line-height: 140%;
+    /* or 60px */
+  }
+
+  &__text {
+    align-self: center;
+    max-width: 450px;
+    font-weight: 400;
+    @include mSt.adaptiv-value("font-size", 18, 16, 0);
+    line-height: 160%;
+    /* or 29px */
+    text-align: center;
+    opacity: 0.6;
+    @include mSt.adaptiv-value("padding-top", 20, 5, 0);
+  }
+
+  &__cards {
+    @include mSt.adaptiv-value("padding-top", 60, 40, 0);
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  &__cards-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    justify-content: center;
+    @include mSt.adaptiv-value("gap", 73, 3, 0);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    flex-shrink: 0;
+    background: #fff;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.31);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: left;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.41);
+      background-color: rgba(215, 105, 105, 0.2);
+    }
+  }
+
+  &__card-img {
+    border-radius: 10px;
+    max-width: 180px;
+
+    img {
+      width: 80%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__card-title {
+    display: flex;
+    justify-content: center;
+    font-family: "Gelasio";
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+  }
+
+  &__card-text {
+    display: flex;
+    @include mSt.adaptiv-value("gap", 50, 25, 0);
+    // gap: 50px;
+  }
+
+  &__card-location {
+    font-weight: 400;
+    font-size: 20px;
+    @include mSt.adaptiv-value("font-size", 20, 16, 0);
+    line-height: 150%;
+    /* identical to box height, or 30px */
+    opacity: 0.6;
+
+    &::before {
+      content: "";
+      background: url("../img/location.svg") center no-repeat;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      opacity: 0.6;
+    }
+  }
+
+  &__card-rating {
+    font-size: 18px;
+    line-height: 150%;
+    /* identical to box height, or 27px */
+
+    &::before {
+      content: "";
+      background: url("../img/rating.svg") center no-repeat;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      opacity: 0.6;
+    }
+  }
+
+  &__card-duration {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    opacity: 0.6;
+  }
+
+  &__card-price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    /* identical to box height, or 27px */
+    opacity: 1;
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      /* identical to box height, or 24px */
+      opacity: 0.6;
+    }
+  }
+}
+
+.pagonation {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  @include mSt.adaptiv-value("padding-top", 51, 31, 0);
+  @include mSt.adaptiv-value("gap", 50, 30, 0);
+
+  &__arrow-prev {
+    font-size: 22px;
+  }
+
+  &__row {
+    gap: 3px;
+  }
+
+  &__btn {
+    width: 75px;
+    @include mSt.adaptiv-value("width", 75, 20, 0);
+    height: 5px;
+    background: rgba(201, 69, 59, 0.1);
+    border-radius: 10px;
+  }
+
+  &__btn.active {
+    background: var(--color-btn);
+  }
+
+  &__arrow-next {
+    font-size: 22px;
+  }
+}
