@@ -103,7 +103,7 @@ h6 {
 }
 
 .no-webp .header{
-  background-image: url(../../img/Rectangle31.jpg); }
+  background-image: url(../img/Rectangle31.jpg); }
 
 .header {
   background-size: cover;
@@ -1124,4 +1124,4 @@ h6 {
 }
 }
 
-.webp .header{ background-image: url(../../img/Rectangle31.webp); }
+.webp .header{ background-image: url(../img/Rectangle31.webp); }
