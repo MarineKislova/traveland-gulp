@@ -34,24 +34,24 @@ export const html = () => {
 		}))
 		*/
       .pipe(app.plugins.replace(/\/?assets\/img\//g, "img/"))
-      // .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
-      .pipe(
-        app.plugins.if(
-          app.isBuild,
-          app.plugins.replace(/(<img\s+[^>]*?srcset=")([^"]*?)("[^>]*?>)/gi, (match, opening, srcsetUrls, closing) => {
-            // Заменяем все .jpg и .png на .webp в списке URL
-            const webpSrcset = srcsetUrls.replace(/\.(jpe?g|png)/gi, ".webp");
+      .pipe(app.plugins.if(app.isBuild, webpHtmlNosvg()))
+      // .pipe(
+      //   app.plugins.if(
+      //     app.isBuild,
+      //     app.plugins.replace(/(<img\s+[^>]*?srcset=")([^"]*?)("[^>]*?>)/gi, (match, opening, srcsetUrls, closing) => {
+      //       // Заменяем все .jpg и .png на .webp в списке URL
+      //       const webpSrcset = srcsetUrls.replace(/\.(jpe?g|png)/gi, ".webp");
 
-            // Возвращаем новую структуру: <picture> с source webp и оригинальным <img>
-            return `
-                <picture>
-                  <source srcset="${webpSrcset}" type="image/webp" sizes="100vw">
-                  ${match}
-                </picture>
-              `;
-          })
-        )
-      )
+      //       // Возвращаем новую структуру: <picture> с source webp и оригинальным <img>
+      //       return `
+      //           <picture>
+      //             <source srcset="${webpSrcset}" type="image/webp" sizes="100vw">
+      //             ${match}
+      //           </picture>
+      //         `;
+      //     })
+      //   )
+      // )
       .pipe(
         app.plugins.if(
           app.isBuild,
