@@ -84,14 +84,18 @@
   &__btn {
     display: flex;
     justify-content: center;
+    
     @include mSt.adaptiv-value("width", 187, 134, 0);
     @include mSt.adaptiv-value("height", 59, 48, 0);
   }
 }
 .btn {
+  display: flex;
   background: var(--color-btn);
   border-radius: 5px;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   font-weight: 400;
 
   &:hover {
