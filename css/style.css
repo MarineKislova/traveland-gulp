@@ -172,6 +172,11 @@ h6 {
           align-items: center;
 }
 
+.header__nav-list a:hover {
+  font-weight: 800;
+  color: var(--color-btn);
+}
+
 .header__button {
   width: calc(110px + 53 * (100vw - 320px) / (1920 - 320));
   height: calc(40px + 11 * (100vw - 320px) / (1920 - 320));
@@ -228,7 +233,7 @@ h6 {
 
 .btn:hover {
   background: #020024;
-  background: linear-gradient(15deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 50%, rgb(55, 55, 237) 100%);
+  background: linear-gradient(15deg, rgb(122, 10, 0) 0%, rgb(121, 11, 9) 25%, rgb(237, 82, 55) 100%);
 }
 
 .btn {
